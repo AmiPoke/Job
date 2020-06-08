@@ -336,7 +336,7 @@ function ExportData(MONAT, JAHR, ID_Lohnexport, Dateiname)
   local p = SQLQuery:new('ZMI_Time','SELECT mas.ID, f.FirmenNr FROM MA_Stammdaten mas Left Outer Join Firma f ON f.ID = mas.ID_Firma WHERE mas.ID_Lohnexport = ' .. ID_Lohnexport .. ' AND IFNULL(mas.Passiv, false) = false AND '..
 																		' (mas.Austritt>='..QuotedStr('01.'..MONAT..'.'..JAHR)..' OR mas.Austritt IS NULL) AND mas.Geloescht IS NULL')
 	-- Logeintrag erzeugen
-  DebugMessage('Es werden ' .. p:RecordCount() .. ' Personaldaten exportiert.')
+  DebugMessage('Es werden ' .. p:RecordCount() .. ' Personaldaten exportiert. Und das macht Spaß!w')
 	-- Pfad ermitteln
   local ExportFile = GetPath(ID_Lohnexport, Dateiname)
 	-- Pfad für die Fehltage ermiteln
